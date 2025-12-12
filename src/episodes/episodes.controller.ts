@@ -1,4 +1,12 @@
-import { Body, Controller, Get, Param, Post, Query } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  Param,
+  Post,
+  Query,
+  Request,
+} from '@nestjs/common';
 import { EpisodesService } from './episodes.service';
 
 @Controller('episodes')
@@ -8,23 +16,23 @@ export class EpisodesController {
   @Get()
   findAll(@Query('sort') sort: 'asc' | 'desc' = 'desc') {
     console.log(sort);
-    return this.episodesService;
+    return 'all episodes';
   }
 
   @Get('featured')
   findFeatured() {
-    return 'Featured Episodes';
+    return 'featured episodes';
   }
 
   @Get(':id')
   findone(@Param() id: string) {
     console.log(id);
-    return 'One Episode of id';
+    return 'one episode';
   }
 
   @Post()
   create(@Body() input: any) {
     console.log(input);
-    return 'New Episode';
+    return 'create episode';
   }
 }
