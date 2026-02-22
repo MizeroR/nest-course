@@ -22,7 +22,7 @@ export class EpisodesController {
   }
 
   @Get(':id')
-  findone(@Param() id: string) {
+  findOne(@Param() id: string) {
     console.log(id);
     return this.episodesService.findOne(id);
   }
