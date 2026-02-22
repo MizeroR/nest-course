@@ -1,4 +1,4 @@
 export class CreateEpisodeDto {
-  name: string;
-  featured?: string;
+  name!: string;
+  featured?: boolean;
 }
